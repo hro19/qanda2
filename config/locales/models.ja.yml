@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      article: 投稿
+      user: ユーザー
+      category: カテゴリー
+    attributes:
+      question:
+        id: ID
+        title: タイトル
+        name: 名前
+        content: コンテンツ
+        created_at: 作成日
+        updated_at: 更新日
+      answer:
+        id: ID
+        name: 名前
+        content: コンテンツ
+        created_at: 作成日
+        updated_at: 更新日
+      user:
+        id: ID
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        created_at: 作成日
+        updated_at: 更新日
