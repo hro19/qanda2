@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
     def index
     end
 
+    # 新規追加
     def new
     end
 
