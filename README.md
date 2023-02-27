@@ -8,8 +8,14 @@ ruby -v
 rails -v
 //全てのルートパスの確認
 rails routes
-rails db
+
+//DBの状態をチェック
+rails dbconsole
+.schema [テーブル名（複数形）]
+//コンソールぬけ出し方
+.q
 ```
+
 ### 環境構築
 ```:コマンドプロンプト
 rails new qanda2 _7.0.4_
