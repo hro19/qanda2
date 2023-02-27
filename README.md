@@ -33,19 +33,12 @@ rails s
 
 ### 『Question(質問)のコントローラー・モデル作成』
 ```:コマンドプロンプト
-//コントローラー作成時は　複数形で記述
+//コントローラー作成時は複数形で記述
 rails g controller questions
-<<<<<<< HEAD
 
-//モデル作成時は　単数形でイニシャルは大文字で記述
+//モデル作成時は単数形でイニシャルは大文字で記述
 rails g model Question name:string title:string content:text
 
-//モデルの情報をDBに反映します。
-rails db:migrate
-```
-=======
-//モデル作成時は　単数形でイニシャルは大文字で記述
-rails g model Question name:string title:string content:text
 //モデルの情報をDBに反映します。
 rails db:migrate
 ```
