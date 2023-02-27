@@ -13,3 +13,7 @@
   Content:<br>
   <%= @question.content %>
 </p>
+
+<%= link_to '編集', edit_question_path(@question) %><br>
+<%= link_to '削除', question_path(@question),
+          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%>
