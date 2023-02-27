@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
     def new
     end
 
+    # 新規登録
     def create
     end
 
