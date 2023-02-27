@@ -42,4 +42,3 @@ rails g model Question name:string title:string content:text
 //モデルの情報をDBに反映します。
 rails db:migrate
 ```
->>>>>>> 27f5da5 (【更新】readme)
