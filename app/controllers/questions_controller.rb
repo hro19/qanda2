@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 
+    # 全質問
     def index
     end
 
