@@ -1,22 +1,28 @@
 <h1 class="text-white bg-primary fs-1">Questions</h1>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Name</th>
-    <th>Content</th>
-    <th></th>
-  </tr>
-  <% @questions.each do |question| %>
-  <tr>
-    <td><%= question.id %></td>
-    <td><%= question.title %></td>
-    <td><%= question.name %></td>
-    <td><%= question.content %></td>
-    <td><%= link_to 'show', question_path(question) %></td>
-    <td><%= link_to 'edit', edit_question_path(question) %></td>
-    <td><%= link_to 'destroy', question_path(question),
-          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%></td>
-  </tr>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>名前</th>
+      <th>内容</th>
+      <th>詳細ページ</th>
+      <th>編集ページ</th>
+      <th>削除ボタン</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.id %></td>
+      <td><%= question.title %></td>
+      <td><%= question.name %></td>
+      <td><%= question.content %></td>
+      <td><%= link_to 'show', question_path(question) %></td>
+      <td><%= link_to 'edit', edit_question_path(question) %></td>
+      <td><%= link_to 'destroy', question_path(question),
+            data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%></td>
+    </tr>
   <% end %>
+  </tbody>
 </table>
