@@ -2,6 +2,11 @@ class QuestionsController < ApplicationController
   # 質問一覧表示
   def index
     @questions = Question.all
+
+    # @questions = Question.where("id > ?", 3) 
+    # @questions = Question.where.not(name: "山本")
+    # @questions = Question.where("name IS NOT NULL")
+    # @questions = Question.where("name LIKE?", "%田%")
     # p @questions
   end
   
