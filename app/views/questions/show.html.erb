@@ -27,6 +27,9 @@
     Content:<br>
     <%= answer.content %>
   </p>
+  <p>
+    <%= link_to '回答削除',[answer.question,answer],data:{turbo_method:'delete', turbo_confirm:"Are you sure?"} %>
+  </p>
 <% end %>
 
 <h2>回答を追加する</h2>
