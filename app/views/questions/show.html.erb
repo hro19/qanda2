@@ -1,4 +1,7 @@
 <h1>Show</h1>
+<%= link_to '編集', edit_question_path(@question) %><br>
+<%= link_to '削除', question_path(@question),
+          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%>
 <p>
   Title:<br>
   <%= @question.title %>
@@ -14,6 +17,33 @@
   <%= @question.content %>
 </p>
 
-<%= link_to '編集', edit_question_path(@question) %><br>
-<%= link_to '削除', question_path(@question),
-          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%>
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+  <p>
+    Name:<br>
+    <%= answer.name %>
+  </p>
+  <p>
+    Content:<br>
+    <%= answer.content %>
+  </p>
+<% end %>
+
+<h2>回答を追加する</h2>
+<%= form_with model:[@question,@question.answers.build] do |form| %>
+
+<div>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.label :content %><br>
+  <%= form.text_area :content %>
+</div>
+
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>
