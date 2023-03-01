@@ -2,9 +2,9 @@
 <p>【タイトル】<%= @question.title %></p>
 <p>【名前】:<%= @question.name %></p>
 <p>【コンテンツ】:<%= @question.content %></p>
-<%= link_to '編集', edit_question_path(@question) %>
 <%= link_to '削除', question_path(@question),
-          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%>
+          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
+<%= link_to '編集', edit_question_path(@question), class: "btn btn-sm btn-success" %>
 
 <div class="mt-3">
 <h2>Answers</h2>
@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= answer.content %></h5>
     <p class="card-text"><%= answer.name %></p>
-    <%= link_to("回答削除",[answer.question,answer],data:{turbo_method:'delete', turbo_confirm:"Are you sure?"}, class: "card-link") %>
+    <%= link_to("回答削除",[answer.question,answer],data:{turbo_method:'delete', turbo_confirm:"Are you sure?"}, class: "btn btn-sm btn-danger") %>
   </div>
 </div>
 <% end %>
@@ -32,7 +32,7 @@
 </div>
 
 <div>
-  <%= form.submit %>
+  <%= form.submit '登録', class:'btn btn-sm btn-primary' %>
 </div>
 
 <% end %>
