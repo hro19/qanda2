@@ -11,9 +11,22 @@
 <% @question.answers.each do |answer| %>
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= answer.content %></h5>
-    <p class="card-text"><%= answer.name %></p>
+    <h5 class="card-title"><%= answer.name %></h5>
+    <p class="card-text"><%= answer.content %></p>
     <%= link_to("回答削除",[answer.question,answer],data:{turbo_method:'delete', turbo_confirm:"Are you sure?"}, class: "btn btn-sm btn-danger") %>
+    <%= link_to("回答編集","/questions/#{@question.id}/answers/#{answer.id}/edit" ,data:{turbo_method:"get"}, class: "btn btn-sm btn-success") %>
+
+    <%
+=begin%>
+ qandaサイトの記述方法 
+<%
+=end%>
+
+    <%
+=begin%>
+ <%= link_to '答えを編集する', "/questions/#{@question.id}/answers/#{answer.id}/edit" ,data:{turbo_method:"get"} %></td>  
+<%
+=end%>
   </div>
 </div>
 <% end %>

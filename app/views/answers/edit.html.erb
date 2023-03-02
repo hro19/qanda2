@@ -1,0 +1,19 @@
+<h3>回答編集ページ</h3>
+
+<%= form_with model: [@question, @answer] do |form| %>
+
+<div>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+  <%= form.label :content %><br>
+  <%= form.text_area :content %>
+</div>
+
+<div>
+  <%= form.submit '登録', class:'btn btn-sm btn-primary' %>
+</div>
+
+<% end %>
