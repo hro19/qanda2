@@ -1,0 +1,26 @@
+<h2>Results index</h2>
+
+<table class="table table-hover table-inverse">
+  <!--検索対象モデルがQuestionの時 -->
+  <% if @range == "Question" %>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.title %></td>
+          <td><%= question.name %></td>
+          <td><%= question.content %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    <!--検索対象モデルがQuestionではない時(= 検索対象モデルがAnswerの時) -->
+    <tbody>
+      <% @answers.each do |answer| %>
+        <tr>
+          <td><%= answer.name %></td>
+          <td><%= answer.content %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
