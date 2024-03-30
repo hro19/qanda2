@@ -1,9 +1,10 @@
 <%= form_with model: @question do |form| %>
   <% if @question.errors.any? %>
     <div>
+      <h2 class="h4"><u><%= pluralize(@question.errors.count, "エラー") %>により、この質問は保存できませんでした</u></h2>
       <ul>
         <% @question.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+            <li class="text-danger"><%= message %></li>
         <% end %>
       </ul>
     </div>
