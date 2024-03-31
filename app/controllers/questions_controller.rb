@@ -3,25 +3,25 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
 
-    # @questions = Question.where("id > ?", 3) 
+    # @questions = Question.where("id > ?", 3)
     # @questions = Question.where.not(name: "山本")
     # @questions = Question.where("name IS NOT NULL")
     # @questions = Question.where("name LIKE?", "%田%")
     # p @questions
   end
-  
+
   # 質問詳細ページ表示
   def show
     # p params[:id]
     @question = Question.find(params[:id])
     # p @question
   end
-  
+
   # 質問の作成
   def new
     @question = Question.new
   end
-  
+
   # 質問の登録
   def create
     # Questionモデルを初期化
@@ -34,12 +34,12 @@ class QuestionsController < ApplicationController
       render 'new', status: :unprocessable_entity
     end
   end
-  
+
   # 質問の編集
   def edit
     @question = Question.find(params[:id])
   end
-  
+
   # 質問の更新
   def update
     @question = Question.find(params[:id])
@@ -49,15 +49,16 @@ class QuestionsController < ApplicationController
       render 'edit', status: :unprocessable_entity
     end
   end
-  
+
   # 質問の削除
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
     redirect_to questions_path
   end
-  
+
   private
+
   def question_params
     params.require(:question).permit(:title, :name, :content)
   end

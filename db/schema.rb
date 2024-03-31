@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_093114) do
-  create_table "answers", force: :cascade do |t|
-    t.string "name"
-    t.text "content"
-    t.integer "question_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
+ActiveRecord::Schema[7.0].define(version: 20_230_228_093_114) do
+  create_table 'answers', force: :cascade do |t|
+    t.string 'name'
+    t.text 'content'
+    t.integer 'question_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['question_id'], name: 'index_answers_on_question_id'
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'questions', force: :cascade do |t|
+    t.string 'name'
+    t.string 'title'
+    t.text 'content'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "answers", "questions"
+  add_foreign_key 'answers', 'questions'
 end
