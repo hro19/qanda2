@@ -8,10 +8,6 @@ ruby -v
 rails -v
 //全てのルートパスの確認
 rails routes
-<<<<<<< HEAD
-
-=======
->>>>>>> 27f5da5 (【更新】readme)
 //DBの状態をチェック
 rails dbconsole
 .schema [テーブル名（複数形）]
@@ -55,4 +51,22 @@ rails db:migrate
 
 //コントローラー作成時は複数形で記述
 rails g controller answers
+```
+
+Rubocopの使い方
+
+```
+//全てのファイルを解析
+rubocop
+
+//自動修正できるところは修正
+rubocop -a
+
+//コントローラー
+rubocop app/controllers
+
+//モデル
+rubocop app/models
+
+
 ```
