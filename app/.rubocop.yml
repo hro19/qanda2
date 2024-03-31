@@ -34,7 +34,17 @@ Metrics/ClassLength:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
-
 # 日本語でのコメントを許可
 Style/AsciiComments:
   Enabled: false
+
+# FrozenStringLiteralCommentの警告を無効化
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Missing top-level documentation commentを無効化
+Style/Documentation:
+  Enabled: false
+
+
+  
