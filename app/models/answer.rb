@@ -1,4 +1,3 @@
-
 # This class represents an answer to a question.
 #
 # It provides a method to perform different types of searches on the answer content.
@@ -24,3 +23,4 @@ class Answer < ApplicationRecord
                  Answer.all
                end
   end
+end
